@@ -1,0 +1,15 @@
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+*.tmp
+.vscode/
+.idea/
+
+# Agent & Logs
+.gemini/
+*.log
+
+# Dependencies (if added later)
+node_modules/
+dist/
+build/
