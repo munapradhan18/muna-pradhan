@@ -43,6 +43,7 @@
         <a href="#projects" class="nav-item">03 / Projects</a>
         <a href="#education" class="nav-item">04 / Education</a>
         <a href="#achievements" class="nav-item">05 / Achievements</a>
+        <a href="#contact" data-open-comm class="nav-item">06 / Contact</a>
       </nav>
     </div>
   </header>
@@ -442,6 +443,21 @@
         <a href="assets/resume.pdf" download="Muna_Pradhan_Resume.pdf" class="btn-editorial-link">
           <span>Direct PDF Download ↓</span>
         </a>
+
+        <a href="mailto:munapradhanm97@gmail.com" class="btn-editorial-link">
+          <span class="material-symbols-outlined" style="font-size: 16px;">mail</span>
+          <span>munapradhanm97@gmail.com</span>
+        </a>
+
+        <a href="https://github.com/munapradhan18" target="_blank" rel="noopener noreferrer" class="btn-editorial-link">
+          <span class="material-symbols-outlined" style="font-size: 16px;">code</span>
+          <span>GitHub Profile ↗</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/muna-pradhan-1aa36a378/" target="_blank" rel="noopener noreferrer" class="btn-editorial-link">
+          <span class="material-symbols-outlined" style="font-size: 16px;">person</span>
+          <span>LinkedIn Profile ↗</span>
+        </a>
       </div>
     </section>
 
@@ -460,6 +476,10 @@
       <p class="footer-copy">
         Crafted with editorial typography and bespoke SVG watercolor mesh. Zero external tracking.
       </p>
+
+      <a href="#contact" data-open-comm class="btn-editorial-link">
+        Contact Muna <span class="material-symbols-outlined" style="font-size: 14px;">mail</span>
+      </a>
     </div>
   </footer>
 
@@ -534,18 +554,22 @@
         <button class="modal-close" aria-label="Close Modal">&times;</button>
       </div>
       <div class="modal-body">
+        <a href="mailto:munapradhanm97@gmail.com?subject=Portfolio%20Inquiry" class="btn-editorial-link" style="display: inline-flex; margin-bottom: 16px;">
+          <span class="material-symbols-outlined" style="font-size: 16px;">mail</span>
+          <span>Email directly: munapradhanm97@gmail.com</span>
+        </a>
         <form id="comm-form" style="display: flex; flex-direction: column; gap: 14px;">
           <div>
             <label style="display: block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); text-transform: uppercase; margin-bottom: 4px;">Your Identity / Organization</label>
-            <input type="text" required placeholder="Name or Team" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px;">
+            <input name="senderName" type="text" required placeholder="Name or Team" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px;">
           </div>
           <div>
             <label style="display: block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); text-transform: uppercase; margin-bottom: 4px;">Return Address</label>
-            <input type="email" required placeholder="name@institution.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px;">
+            <input name="senderEmail" type="email" required placeholder="name@institution.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px;">
           </div>
           <div>
             <label style="display: block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); text-transform: uppercase; margin-bottom: 4px;">Inquiry / Topic</label>
-            <textarea required rows="4" placeholder="Detail your project, research inquiry, or opportunity..." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px; resize: vertical;"></textarea>
+            <textarea name="message" required rows="4" placeholder="Detail your project, research inquiry, or opportunity..." style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: 4px; font-family: var(--font-sans); font-size: 13px; resize: vertical;"></textarea>
           </div>
           <button type="submit" class="btn-crimson" style="justify-content: center;">
             <span>Transmit Message</span>

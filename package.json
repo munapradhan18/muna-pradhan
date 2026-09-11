@@ -1,0 +1,25 @@
+{
+  "name": "stitch_cse_student_portfolio_blueprint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "node --check script.js",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munapradhan18/muna-pradhan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/munapradhan18/muna-pradhan/issues"
+  },
+  "homepage": "https://github.com/munapradhan18/muna-pradhan#readme",
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

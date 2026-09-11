@@ -199,18 +199,57 @@ function initCommunicationModal() {
 
   const form = document.getElementById('comm-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const formData = new FormData(form);
+      const senderName = formData.get('senderName');
+      const senderEmail = formData.get('senderEmail');
+      const message = formData.get('message');
+      const subject = encodeURIComponent(`Portfolio inquiry from ${senderName}`);
+      const body = encodeURIComponent(`Name / Organization: ${senderName}\nEmail: ${senderEmail}\n\n${message}`);
       const status = document.getElementById('comm-status');
+      const submitButton = form.querySelector('button[type="submit"]');
+
       if (status) {
         status.style.display = 'block';
-        status.textContent = 'Transmission dispatched to Muna Pradhan. You will receive a response shortly.';
+        status.textContent = 'Sending message...';
       }
-      setTimeout(() => {
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/munapradhanm97@gmail.com', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json'
+          },
+          body: new URLSearchParams({
+            name: senderName,
+            email: senderEmail,
+            message,
+            _replyto: senderEmail,
+            _subject: `Portfolio inquiry from ${senderName}`,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === false) {
+          throw new Error(result.message || 'Message service unavailable');
+        }
+
+        if (status) status.textContent = 'Message sent successfully. Thank you for contacting Muna.';
         form.reset();
-        if (commModal) commModal.classList.remove('open');
-        if (status) status.style.display = 'none';
-      }, 2000);
+        setTimeout(() => {
+          if (commModal) commModal.classList.remove('open');
+          if (status) status.style.display = 'none';
+        }, 2200);
+      } catch (error) {
+        if (status) status.textContent = 'Opening your email app instead...';
+        window.location.href = `mailto:munapradhanm97@gmail.com?subject=${subject}&body=${body}`;
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   }
 }
